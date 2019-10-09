@@ -4,12 +4,12 @@ This repo contains all of the documents and code required to complete the assign
 
 ## Data
 
-The "raw" data for this assignment are available [here](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip)
+The "raw" data for this assignment are available for [download here](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip)
 
 ## Files
 
 **CodeBook.md**  
 Describes the variables, data and transformations needed to clean up the dataset.
 
-**run_analysis.R**
+**run_analysis.R**  
 The R-script that contains all of the steps necessary to get a tidy dataset from the provided "raw" data.
