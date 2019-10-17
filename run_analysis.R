@@ -46,3 +46,6 @@ sensorData <- sensorData %>%
 sensorDataSummary <- data.table(sensorData) %>%
                      group_by(subjectId, activityLabel) %>%
                      summarise_all(mean)
+
+## output the data to a file
+write.table(sensorDataSummary, file = "sensor_summary.txt", row.names = FALSE)
