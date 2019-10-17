@@ -4,7 +4,22 @@ The data are divided into several *.txt files which are described as follows:
 
 #### activity_labels.txt
 
-A file containing two columns and 6 records. The first column is an activity code as used in the rest of the data, the second column is the description of the action represented by the activity code
+A file containing two columns and 6 records. The first column is an activity code as used in the rest of the data, the second column is the description of the action represented by the activity code.
+
+There are six different activities:
+
+ 
+
+| **activity code** | **activity label** |
+| ----------------: | ------------------ |
+|                 1 | Walking            |
+|                 2 | Walking upstairs   |
+|                 3 | Walking downstairs |
+|                 4 | Sitting            |
+|                 5 | Standing           |
+|                 6 | Laying             |
+
+
 
 #### features.txt
 
@@ -18,11 +33,13 @@ The measurement data are split into two directories `train` and `test`. Each of 
 
 This file contains the subject id linked to each of the measurements. There are 2947 entries in the test data, and 7352 entries in the train data (10299 total).
 
+The data set contains info on 29 subject, so the subject ids range from 1:30.
+
 #### X_test.txt / X_train.txt
 
 This file contains all of the measurement data. Each column is separated by whitespace and is linked to a feature name in `features.txt`. All of the values are numeric and there are no missing values. There are 2947 x 561 entries in the test data, and 7352 x 561 entries in the train data (10299 x 561 total).
 
-The data are already summarized into variables based on the following functions:
+The data are normalized (range -1:1) and already summarized into variables based on the following functions:
 
 mean(): Mean value  
 std(): Standard deviation  
