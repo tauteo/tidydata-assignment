@@ -33,6 +33,13 @@ sensorData <- bind_cols(subjects, data_y, data_x)
 sensorData <- select(sensorData, subjectId, activityCode, grep(".mean|.std", names(sensorData)))
 
 ## 3) Name the activities
+activities <- read.table("./data/activity_labels.txt", col.names = c("code", "label"))
+sensorData <- sensorData %>%
+              mutate(activityLabel = factor(sensorData$activityCode, labels = activities$label)) %>%
+              select(-activityCode) %>%
+              select(subjectId, activityLabel, everything())
+
 ## 4) Label dataset variables
+## values were labelled throughout
 
 ## 5) Create a dataset grouped by subject and activity, that shows the average of each activity
