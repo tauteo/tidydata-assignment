@@ -30,6 +30,7 @@ subjects <- bind_rows(subject_train, subject_test)
 sensorData <- bind_cols(subjects, data_y, data_x)
 
 ## 2) Extract the mean and standard deviation for each measurement
+sensorData <- select(sensorData, subjectId, activityCode, grep(".mean|.std", names(sensorData)))
 
 ## 3) Name the activities
 ## 4) Label dataset variables
