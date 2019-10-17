@@ -79,3 +79,30 @@ In order to get from the data in separate files and directories to one tidy data
 2. Remove the variables that are not related to mean or standard deviation
 3. Label each observation with the appropriate activity name
 4. Find the mean of each variable, when the data are grouped by subject and activity
+
+#### Combine train and test data
+
+This step is divided into the following sub-steps
+
+1. Read the feature names from `features.txt`
+2. Read the measurements data (train and test), using the feature names as column names
+3. Read the activity data (train and test) and label it as `activityCode`
+4. Read the subject data (train and test) and label it as `subjectId`
+5. Combine the train and test measurements data
+6. Combine the train and test activity data
+7. Combine the train and test subject data
+8. Combine the subject, activity, and measurements data into one dataframe (called `sensorData`)
+
+#### Use only the columns relating to mean and standard deviation
+
+First filter the `sensorData` column names and keep only those containing either the word "mean" or "std". Then select these column names as well as the `subjectId` and `activityCode`
+
+#### Replace the activity codes with activity names
+
+First read the activity names from the file `activity_labels.txt`. Add a column `activityLabel` to the `sensorData` dataframe that contains the correct activity name for each corresponding activity code. Finally, drop the `activityCode` column from the dataframe and reorder the columns so the `subjectId` column is first and the `activityLabel` column is second, followed by all the rest of the measurements data.
+
+#### Find the mean of each variable, by subject and activity
+
+First create a data table from the dataframe, this will allow for easier group by operations. Then group by `subjectId` and `activityLabel`. Finally, summarize each variable by calling the `summarise_all()` function and assigning the result to a new variable.
+
+This new variable is then written to a file `sensor_summary.txt`.
