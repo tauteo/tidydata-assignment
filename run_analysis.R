@@ -43,3 +43,6 @@ sensorData <- sensorData %>%
 ## values were labelled throughout
 
 ## 5) Create a dataset grouped by subject and activity, that shows the average of each activity
+sensorDataSummary <- data.table(sensorData) %>%
+                     group_by(subjectId, activityLabel) %>%
+                     summarise_all(mean)
