@@ -33,7 +33,7 @@ The measurement data are split into two directories `train` and `test`. Each of 
 
 This file contains the subject id linked to each of the measurements. There are 2947 entries in the test data, and 7352 entries in the train data (10299 total).
 
-The data set contains info on 29 subject, so the subject ids range from 1:30.
+The data set contains info on 30 subject, so the subject ids range from 1:30.
 
 #### X_test.txt / X_train.txt
 
